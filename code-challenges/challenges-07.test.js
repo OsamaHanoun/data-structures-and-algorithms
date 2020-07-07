@@ -1,4 +1,3 @@
-'use strict';
 
 // to learn more about the cheerio library and what it is doing, look at their documentation: https://www.npmjs.com/package/cheerio
 const cheerio = require('cheerio');
@@ -21,6 +20,9 @@ let $ = createSnippetWithJQuery(`
 
 const addTea = () => {
   // Solution code here...
+  let liE = '<li>tea</li>'
+  $('ul').append(liE);
+  $('ul').append(liE);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,6 +37,11 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  let resultArr =[];
+  for(let i in arr){
+    resultArr.push(Math.pow(2,arr[i]));
+  }
+  return resultArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,6 +52,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let resultArr= []
+  arr.forEach(element=> {
+    resultArr.push(Math.pow(2,element));
+  });
+  return resultArr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,6 +67,10 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let resultArr= arr.map(element=> {
+    return Math.pow(2,element)
+  });
+  return resultArr
 };
 
 /* ------------------------------------------------------------------------------------------------
